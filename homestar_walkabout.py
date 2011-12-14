@@ -73,9 +73,6 @@ def get_input():
     input = raw_input('> ')
     return parse_input(input.strip())
 
-def marzipan():
-    print ''
-    return 0
 
 def bubs_inside():
     global context
@@ -89,7 +86,8 @@ def bubs_inside():
         if(action == 'move'):
             if('out' in remainder):
                 bubs_outside() 
-
+            else:
+                print 'You cannot go there!'
 
 def bubs_outside():
     global context
@@ -97,7 +95,138 @@ def bubs_outside():
         context = 'outside'
         print 'You are outside of a small brick building, which, wait you know this place well! This is your concession stand. And even if you don\'t remember it, the sign at the top reading "Bubs\' Concession Stand" is helping out' 
         action,remainder = get_input()
+        if(action == 'move'):
+            if('in' in remainder):
+                bubs_inside() 
+            elif('down' in remainder):
+                field_2() 
+            elif('up' in remainder):
+                field_2() 
+            elif('left' in remainder):
+                sports_field() 
+            elif('right' in remainder):
+                field() 
+            else:
+                print 'You cannot go there!'
 
+
+def field_2():
+    global context
+    while(1):
+        context = 'outside'
+        print 'This is a field'
+        action,remainder = get_input()
+        if(action == 'move'):
+            if('down' in remainder):
+                field_2() 
+            elif('up' in remainder):
+                field_2() 
+            elif('left' in remainder):
+                sports_field() 
+            elif('right' in remainder):
+                field() 
+            else:
+                print 'You cannot go there!'
+
+def lockers():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Lockers'
+        action,remainder = get_input()
+        if(action == 'move'):
+            if('in' in remainder):
+                bubs_inside() 
+            elif('down' in remainder):
+                field_2() 
+            elif('up' in remainder):
+                field_2() 
+            elif('left' in remainder):
+                sports_field() 
+            elif('right' in remainder):
+                field() 
+            else:
+                print 'You cannot go there!'
+
+def sports_field():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Sports Field'
+        action,remainder = get_input()
+
+def strong_badia():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Strong Badia'
+        action,remainder = get_input()
+
+def grill():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Grill'
+        action,remainder = get_input()
+
+def kot_castle():
+    global context
+    while(1):
+        context = 'outside'
+        print 'KOT Castle'
+        action,remainder = get_input()
+
+def homestar():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Homestar House'
+        action,remainder = get_input()
+
+def stick():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Stick'
+        action,remainder = get_input()
+
+def strongbad():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Strongbad House'
+        action,remainder = get_input()
+
+def field():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Field'
+        action,remainder = get_input()
+
+def marzipan():
+    global context
+    while(1):
+        context = 'outside'
+        print 'Marzipan House'
+        action,remainder = get_input()
+
+print """
+_____ _____                                                          
+|   | |   |                                                          
+|   |_|   |                                                          
+|         | _______ _____ _____ ______ ______ _______ _______ _______
+|   ___   | | ___ | | | \ / | | | ___| |  __| |__ __| | ___ | | ___ |
+|   | |   | | |_| | | |\ v /| | | __|  |__  |   | |   | |_| | | |_| |
+|___| |___| |_____| |_| \_/ |_| |____| |____|   |_|   |_| |_| |_| \_\\
+____ ____
+|  | |  |
+|  | |  |
+|  |_|  | _______ ___   ___ __ _______ ______  _______ ___ ___ _______
+|   _   | | ___ | | |   | |/ / | ___ | | |_| | | ___ | | | | | |__ __|
+|  / \  | | |_| | | |_  |   |  | |_| | | ___<  | |_| | | |_| |   | |
+ \/   \/  |_| |_| |___| |_|\_\ |_| |_| |_|_|_| |_____|  \___/    |_|
+ """
 print 'Welcome to Free Country, USA, home of Strongbadia-"The place where tropical breezes blow."'
 print 'You are bubs, a man about town and you need to complete an adventure.'
 print 'As with any good text-based adventure you will have to navigate this strange world by typing commands at the prompt.'
